@@ -27,11 +27,72 @@ Security Automation Incident Response Without Using Docker
 
 ## Step 3- Installing Cent OS 7.9 for Hive, Elasticsearch and Cassandra
 
+>Allocate 14Gb RAM and 6CPU and enter a name for the VM
+>
+>Select the ISO image and skip unattended installation
+>
+>Test this media & Install CentOs 7
 
-    
-   
-    
+> Choose Language ENglish
+>
+> Select automated partitioning and Done
+>
+> Start Installation
+>
+> Set root password and create user
+>
+> Reboot the VM
+>
+> ip a
+>
+> sudo nano /etc/sysconfig/network-scripts/ifcfg-enp0s3
+-----------------------------
 
+>sudo nano /etc/sysconfig/network-scripts/ifcfg-enp0s8
+
+----------------------------------
+
+>sudo mv /etc/yum.repos.d/CentOS-Base.repo/etc/yum.repos.d/CentOS-Base.repo.bak
+
+>sudo vi /etc/yum.repos.d/CentOS-Base.repo:
+
+[base] 
+
+name=CentOS-7 - Base 
+
+baseurl=http://vault.centos.org/centos/7/os/x86_64/ 
+
+gpgcheck=1 
+
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 
+  
+
+[updates] 
+
+name=CentOS-7 - Updates 
+
+baseurl=http://vault.centos.org/centos/7/updates/x86_64/ 
+
+gpgcheck=1 
+
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 
+  
+
+[extras] 
+
+name=CentOS-7 - Extras 
+
+baseurl=http://vault.centos.org/centos/7/extras/x86_64/ 
+
+gpgcheck=1 
+
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 
+
+>sudo yum clean all 
+
+>sudo yum makecache 
+
+>sudo yum update -y 
 
 
 
