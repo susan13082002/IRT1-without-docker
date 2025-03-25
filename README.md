@@ -205,40 +205,6 @@ gpgcheck=1
 >sudo systemctl restart thehive
 
 
-## Step 10 - 
-
-  
-  
-    
-  
-    
-   
- 
-
-
-
-
-# Step by Step Troubleshooting:
-
-## 1 - 
-## 2 - 
-
-
-## 3 - 
-
-
-## 4 - 
-
-## 5- 
-
-
-
-
-
-
-
-
-
 
 
 
