@@ -65,6 +65,23 @@ Security Automation Incident Response Without Using Docker
 
 ## Step 6- Installing Cortex
 
+>sudo apt update
+
+>sudo groupadd docker
+
+>sudo usermod -aG docker $USER
+
+>newgrp docker
+
+>sudo chmod 777 /usr/bin/
+
+>wget -q -O /tmp/install.sh https://archives.strangebee.com/scripts/install.sh ; sudo -v ; bash /tmp/install.sh
+
+>yes
+>
+>Install cortex run neurons locally
+>
+
 
 
 ## Step 7 - Install Cassandra on Cent OS
