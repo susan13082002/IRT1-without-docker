@@ -342,4 +342,53 @@ sudo nano /etc/thehive/application.conf
 
 
 
+## Step 13 - Setting up Cortex Analysers
 
+Add the files in analysers in cortex
+Structure:
+
+analyzers/
+└── MyAnalyzer/
+    ├── analyzer.json
+
+analyzer.json
+{
+  "name": "MyAnalyzer",
+  "version": "1.0",
+  "author": "Rohit KC",
+  "url": "https://github.com/your-repo",
+  "description": "Example analyzer",
+  "license": "MIT",
+  "command": "python3 my_analyzer.py",
+  "baseConfig": "myanalyzer.conf",
+  "dataTypeList": ["domain", "ip", "hash", "url"]
+}
+
+
+analyzer logic: myanalyzer.py
+from cortexutils.analyzer import Analyzer
+
+class MyAnalyzer(Analyzer):
+    def _init_(self):
+        Analyzer._init_(self)
+
+    def run(self):
+        self.report({'message': f"Analyzed {self.get_data()}!"})
+
+if _name_ == '_main_':
+    MyAnalyzer().run()
+    
+
+Analyzer Configuration 
+/etc/cortex/application.conf
+MyAnalyzer {
+  apiKey = "your-api-key-if-needed"
+  ...
+}
+
+
+to deploy the analyzer
+sudo /opt/cortex/bin/cortex-cli analyzer sync
+
+
+    
