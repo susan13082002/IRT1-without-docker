@@ -326,8 +326,8 @@ file, email, network activity
 if Hive is already connted with MISP we can fetch it automatically.
 
 For json export we can use MISP API to pull logs
-> curl -k -x GET "https://misp-instance.com/logs/index" \
-> -H "Authorization: Your_API_KEY" \
+> curl -k -x GET "https://192.168.1.149/logs/index" \
+> -H "Authorization: a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6" \
 > -H "Accept: application/json"
 >-o misp.event.2.json
 
@@ -336,8 +336,8 @@ or
 download it through the web ui
 
 For sending json to thehive
->curl -X POST "https://your-hive-instance.com/api/alert" \
->-H "Authorization: Bearer YOUR_THEHIVE_API_KEY" \
+>curl -X POST "https://192.168.1.149/api/alert" \
+>-H "Authorization: Bearer a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6" \
 >-H "Content-Type: application/json" \
 >-d @misp.event.2.json
 
