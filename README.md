@@ -340,6 +340,7 @@ sudo nano /etc/thehive/application.conf
 
 ![image](https://github.com/user-attachments/assets/0d967199-69d4-4add-9769-8d55c26e47c1)
 
+![image](https://github.com/user-attachments/assets/bc620847-112f-4f7e-8f13-4089206fc8f2)
 
 
 ## Step 13 - Setting up Cortex Analysers
