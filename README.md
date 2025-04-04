@@ -265,6 +265,85 @@ gpgcheck=1
 
 >sudo systemctl restart thehive
 
+## Step 10 - Creating an logs
+
+Logs include
+>event logs (create,modified,deleted)
+>user activity logs (logins,actions performed)
+>synchronization logs (data shared with other MISP instances)
+
+To generate logs in MISP
+enable MISP logging
+
+> / var/www/MISP/app/tmp/logs/
+
+view logs via web ui
+>administration
+>server settings & maintenance
+>logs
+>filter logs by type,user,actions or events
+
+To create a log
+
+>click on the "Add Event"
+
+>fill in Event Details:
+>distribution:
+"Your organization only."
+"This community only."
+"All communities."
+"Connected communities."
+
+>threat Level:
+
+>analysis:
+
+>info:
+
+>date:
+
+>tags:
+
+>galaxy:
+galaxies contain structured information related to malware, actors, and other threat intelligence.
+
+>related Events:
+link to other related events in MISP if applicable.
+
+>add attributes:
+attributes are the core components of an event, providing specific details about the incident.
+iP address, domain, URL, file hash
+
+>add objects (Optional):
+file, email, network activity
+
+>publish the Event:
+
+>monitor and Update:
+
+## Step 11 - Extracting logs in json and sending logs to Hive for integration 
+
+if Hive is already connted with MISP we can fetch it automatically.
+
+For json export we can use MISP API to pull logs
+> curl -k -x GET "https://192.168.1.149/logs/index" \
+> -H "Authorization: a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6" \
+> -H "Accept: application/json"
+>-o misp.event.2.json
+
+or 
+
+download it through the web ui
+
+For sending json to thehive
+>curl -X POST "https://192.168.1.149/api/alert" \
+>-H "Authorization: Bearer a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6" \
+>-H "Content-Type: application/json" \
+>-d @misp.event.2.json
+
+New alert will appear in thehive dashboard.
+
+
 
 
 
