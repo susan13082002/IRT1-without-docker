@@ -265,6 +265,80 @@ gpgcheck=1
 
 >sudo systemctl restart thehive
 
+## Step 10 - MISP Setup for Integration
+
+Create an Organization on MISP
+
+Click "administration"
+
+Click "add organization"
+
+Enter Organization details as desired
+
+Generate UID
+
+Click "Submit"
+
+Add User to Organization
+
+Click on "administration"
+
+Click "Add user"
+
+Enter User details
+
+Chose the created organization
+
+Set user role
+
+click "create"
+
+Create an Auth Key
+
+Click on "Auth Keys"
+
+Click "Add Authentication Key"
+
+Enter details and click submit.
+
+Copy the displayed authkey
+
+Click "I have noted down my key, take me back now"
+
+
+## Step 11 - Cortex Setup for Integration
+
+Click "Add organization" in Cortex
+
+Enter Organization details
+
+Click on "users"
+
+Click "Add users"
+
+Enter the user details as desired
+
+Click "save user"
+
+Click "new password"
+
+Enter password
+
+press Enter
+
+Click "Create API Key"
+
+Click "reveal" to see the API Key
+
+## Step 12 - Adding the API Key
+
+Add Cortex Integration to thehive configuration file
+
+sudo nano /etc/thehive/application.conf
+
+![image](https://github.com/user-attachments/assets/c0a7e2d3-5aa2-4483-8397-ded035960774)
+
+![image](https://github.com/user-attachments/assets/0d967199-69d4-4add-9769-8d55c26e47c1)
 
 
 
